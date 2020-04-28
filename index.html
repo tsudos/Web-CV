@@ -20,8 +20,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- <link rel="stylesheet" media="(min-width: 666px)" href="css/style_desktop.css" type="text/css"> -->
-        <link rel="stylesheet" media="(min-width: 666px)" href="css/style_desktop_scroll.css" type="text/css">
-        <link rel="stylesheet" media="(max-width: 665px)" href="css/style_tab.css" type="text/css" />
+        <!--<link rel="stylesheet" media="(min-width: 666px)" href="css/style_desktop_scroll.css" type="text/css">
+        <link rel="stylesheet" media="(max-width: 665px)" href="css/style_tab.css" type="text/css" />-->
         <!-- <link rel="stylesheet" href="css/form.css" type="text/css">
         <link rel="stylesheet" href="css/formMaps.css" type="text/css"> -->
 
@@ -34,36 +34,11 @@
 
     <body>
         <div id="Ma_Page">
-            <!--barre header - nav -->
-            <!--Réseaux Sociaux-->
-            <div id="social" class="box-social-link">
-                <a href='https://github.com/tsudos'target='_blank'><i class="fab fa-github fa-1x "></i></a>
-                <a href='https://www.linkedin.com/in/stephane-dufour-6102b4b3/' target='_blank'><i class="fab fa-linkedin fa-1x"></i></a>
-                <a href='https://www.instagram.com/tsudos.des.iles/'target='_blank'><i class="fab fa-instagram fa-1x"></i></a>
-                <a href='https://www.facebook.com/Tsudos.des.iles'target='_blank'><i class="fab fa-facebook fa-1x "></i></a>
-            </div>
-            <!--Fin Réseaux Sociaux-->
-
-            <!--Logo-->
-            <div id="Logo">
-            </div>
-            <!--Fin Logo-->
-
-            <!--Nav principale-->
-            <div class="navigation">
-                <ul>
-                    <li><a href="#" class="menu_nav">Prez</a></li>
-                    <li><a href="#" class="menu_nav">Front-End</a></li>			
-                    <li><a href="#" class="menu_nav">Back-End</a></li>
-                    <li><a href="#" class="menu_nav">Realisations</a></li>
-                    <li><a href="#" class="menu_nav">Projets</a></li>
-                </ul>	
-            </div>
-            <!--Fin Nav principale-->
+        <!--barre title & prez - nav -->
 
             <!--Texte Animation-->
-            <div class="text animation">
-                <p>Dufour Stéphane</br>Développeur</p>
+            <div class="animation_title">
+                <p>Dufour Stéphane</br>Développeur Junior</p>
                 <span
                     class="txt-rotate"
                     data-period="2000"
@@ -73,6 +48,11 @@
                         "Back-End"
                         ]'></br>
                 </span>
+            </div>
+
+            <hr>
+
+            <div class="animation_prez"></div>
                 <p>Mobilité</p>
                 <span
                     class="txt-rotate"
@@ -82,24 +62,135 @@
                         "Nouvelle-Aquitaine",
                         "Occitanie",
                         "PACA"
-                        ]'>
+                        ]'></br>
                 </span>
             </div>
             <!--Fin Texte Animation-->
-            <!--Fin barre header - nav -->
 
-            <!--Contenu-->
-            <!--Fin Contenu-->
+            <!--Logo-->
+            <div id="Logo">
+            </div>
+            <!--Fin Logo-->
 
-            <!--Footer-->
-            <p class="footer">Footer Final 2</p>
-            <!--Fin Footer-->
+            <!--Réseaux Sociaux-->
+            <div id="social" class="box-social-link">
+                <a href='https://github.com/tsudos'target='_blank'><i class="fab fa-github fa-1x "></i></a>
+                <a href='https://www.linkedin.com/in/stephane-dufour-6102b4b3/' target='_blank'><i class="fab fa-linkedin fa-1x"></i></a>
+                <a href='https://www.instagram.com/tsudos.des.iles/'target='_blank'><i class="fab fa-instagram fa-1x"></i></a>
+                <a href='https://www.facebook.com/Tsudos.des.iles'target='_blank'><i class="fab fa-facebook fa-1x "></i></a>
+            </div>
+            <!--Fin Réseaux Sociaux-->
+
+            <hr>
+
+            <!--Stack tech-->
+            <div id="stack">
+                <ul>
+                    <li><a href="#" class="icone_php">PHP</a></li>
+                    <li><a href="#" class="icone_symfony">Symfony</a></li>			
+                    <li><a href="#" class="icone_mysql">MySQL</a></li>
+                    <li><a href="#" class="icone_html">HTML5</a></li>
+                    <li><a href="#" class="icone_css">CSS3</a></li>
+                    <li><a href="#" class="icone_bootstrap">Bootstrap</a></li>
+                    <li><a href="#" class="icone_git">Git</a></li>
+                    <li><a href="#" class="icone_wordpress">Wordpress</a></li>
+                    <li><a href="#" class="icone_vsc">Visual Studio Code</a></li>
+                    <li><a href="#" class="icone_office">Pack OFFICE365</a></li>
+                </ul>
+            </div>
+            <!--Fin Stack tech-->
+
+            <hr>
+
+            <!--mailto & cv-->
+            <div id="mailto">
+                <!--<a href="mailto:%64ufourstephane%2Edev%40gmail%2Ecom?subject=Contact%20à%20partir%20du%20site"><i class="fas fa-mail-bulk fa-1x"></i></a>-->
+                <!-- to create a mail of this type in "a": href="mailto:hello+from-another@domain.com" -->
+                <a class="js-MailTo" data-mailto-user="%64ufourstephane%2Edev" data-mailto-domain="gmail%2Ecom" data-mailto-subject="?subject=Contact%20à%20partir%20du%20site"><i class="fas fa-mail-bulk fa-1x"></i><a/>
+                <a class="cv" href="doc/20200325_CV_STEPH_Poste.pdf" target = "_blank"><i class="fas fa-file-download fa-1x"></i><a/>
+            </div>
+            <!--Fin Mailto & cv-->
+            
+            
+            <!--Nav principale-->
+            <!--<div class="navigation">
+                <ul>
+                    <li><a href="#" class="menu_nav">Prez</a></li>
+                    <li><a href="#" class="menu_nav">Front-End</a></li>			
+                    <li><a href="#" class="menu_nav">Back-End</a></li>
+                    <li><a href="#" class="menu_nav">Realisations</a></li>
+                    <li><a href="#" class="menu_nav">Projets</a></li>
+                </ul>	
+            </div>-->
+            <!--Fin Nav principale--> 
+
+        <!--Fin barre title & prez -->
+
+        <!--Contenu-->
+        <div class="content">
+            <!--job & stage-->
+            <div id="job">
+                <h3>Expériences Professionnel</h3>
+            </div>
+            <!--Fin job & stage-->
+
+            <hr>
+
+            <!--cursus & formation-->
+            <div id="formation">
+                <h3>formation</h3>
+            </div>
+            <!--Fin cursus & formation-->
+
+            <hr>
+
+            <!--diplome & certification-->
+            <div id="certification">
+                <h3>Certifications et Diplômes</h3>
+            </div>
+            <!--Fin diplome & certification-->
+
+            <hr>
+
+            <!--skill-->
+            <div id="skill">
+                <h3>Skills et SoftSkills</h3>
+                <div class="col-md-12">
+                    <img class="logo-small-medic" src="img/logo_medic.png">
+                    <h5 class="color-font">Site de santé & bien-être - Medic-Appareil.com</h5>
+                    <small class="color-font">Co-Manager | 2019</small>
+                    <button class="btn btn-primary btn-discover" type="button" data-toggle="modal" data-target="#medic">En détail</button>
+                </div>
+                <div class="col-md-12">
+                    <img class="logo-small-medic" src="img/logo_medic.png">
+                    <h5 class="color-font">Site de santé & bien-être - Medic-Appareil.com</h5>
+                    <small class="color-font">Co-Manager | 2019</small>
+                    <button class="btn btn-primary btn-discover" type="button" data-toggle="modal" data-target="#medic">En détail</button>
+                </div>
+                <div class="col-md-12">
+                    <img class="logo-small-medic" src="img/logo_medic.png">
+                    <h5 class="color-font">Site de santé & bien-être - Medic-Appareil.com</h5>
+                    <small class="color-font">Co-Manager | 2019</small>
+                    <button class="btn btn-primary btn-discover" type="button" data-toggle="modal" data-target="#medic">En détail</button>
+                </div>
+            </div>
+            <!--Fin skill & softSkill-->
+        </div>
+        <!--Fin Contenu-->
+
+        <!--Footer-->
+        <div class="footer">
 
         </div>
+        <!--Fin Footer-->
+
+        </div>
+
         <!--permet d'avoir des icones-->
         <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
         <script src="script/awesome.js"></script>
         <script src="script/scriptText.js"></script>
+        <script src="script/mailto.js"></script>
         <!--
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
     </body>
