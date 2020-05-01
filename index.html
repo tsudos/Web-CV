@@ -28,16 +28,79 @@
         <!--Pour du Style css interne-->
         <style>
         /*style dans html prioritaire sur le css dans un fichier style*/
+
+            @charset "utf-8";
+            /*CSS Document*/
+
+            /*viewport*/
+            @viewport {
+                width: device-width; /* largeur du viewport */
+                zoom: 1; /* zoom initial à 1.0  */
+            }
+            @-ms-viewport{
+                width: device-width;
+            }
+            @-o-viewport{
+                width: device-width;
+            }
+
+            /* micro reset */
+            html, body, ul {
+                padding: 0; margin: 0;
+            }
+
+            /*mise en place d'un patron de police pour changement de la taille en 1 fois !*/
+            html {
+                font-size:18px;
+            }
+
+
+            .hidden {
+                display: none;
+            }
+
+            .bulle span {
+                display: none;
+                }
+
+            .bulle:hover span {
+                display: block;
+                }
+
+            button.bulle {
+                position: relative;
+                cursor: pointer;
+                box-shadow:0px 0px 10px #0B120B;
+                border-radius: 5px;
+                }
+                
+            button.bulle span {
+                display: none;
+                }
+            
+            button.bulle:hover span {
+                left: 0vh;
+                top: 3vh;
+                width: 20vw;
+                padding: 1vw;
+                display: block;
+                position: absolute;
+                border: 2px black solid;
+                box-shadow:0px 0px 2vh #0B120B;
+                background-color: rgb(2, 163, 163);
+                border-radius: 5px;
+                z-index: 999;
+                }
         </style>
 
     </head>
 
     <body>
         <div id="Ma_Page">
-        <!--barre title & prez - nav -->
 
-            <!--Texte Animation-->
-            <div class="animation_title">
+        <!--barre title & prez - nav -->
+            <!--Title-->
+            <div id="title">
                 <p>Dufour Stéphane</br>Développeur Junior</p>
                 <span
                     class="txt-rotate"
@@ -49,39 +112,48 @@
                         ]'></br>
                 </span>
             </div>
+            <!--Fin Title-->
 
-            <hr>
+    <hr>
 
-            <div class="animation_prez"></div>
-                <p>Mobilité</p>
-                <span
-                    class="txt-rotate"
-                    data-period="1000"
-                    data-rotate='[ 
-                        "Auvergne Rhône-alpes",
-                        "Nouvelle-Aquitaine",
-                        "Occitanie",
-                        "PACA"
-                        ]'></br>
-                </span>
+            <!--Prez-->
+            <div id="prez">
+                <!--mobilité-->
+                <div id="animation_prez">
+                    <p>Mobilité</p>
+                    <span
+                        class="txt-rotate"
+                        data-period="1000"
+                        data-rotate='[ 
+                            "Auvergne Rhône-alpes",
+                            "Nouvelle-Aquitaine",
+                            "Occitanie",
+                            "PACA"
+                            ]'></br>
+                    </span>
+                </div>
+                <!--Fin mobilité-->
+                
+                <!--Logo-->
+                <div id="Logo">
+                    <img src="https://loremflickr.com/320/240/paris,girl/all" alt="tof">
+                </div>
+                <!--Fin Logo-->
+
+                <!--Réseaux Sociaux-->
+                <div id="social" class="box-social-link">
+                    <a href='https://github.com/tsudos' target='_blank'><i class="fab fa-github fa-1x "></i></a>
+                    <a href='https://www.linkedin.com/in/stephane-dufour-6102b4b3/' target='_blank'><i class="fab fa-linkedin fa-1x"></i></a>
+                    <a href='https://www.instagram.com/tsudos.des.iles/' target='_blank'><i class="fab fa-instagram fa-1x"></i></a>
+                    <a href='https://www.facebook.com/Tsudos.des.iles' target='_blank'><i class="fab fa-facebook fa-1x "></i></a>
+                    <a href='https://stephane-dufour.welovedevs.com/' target='_blank'><i class="fab fa-dev fa-1x"></i></a>
+                </div>
+                <!--Fin Réseaux Sociaux-->
+
             </div>
-            <!--Fin Texte Animation-->
+            <!--Fin Prez-->
 
-            <!--Logo-->
-            <div id="Logo">
-            </div>
-            <!--Fin Logo-->
-
-            <!--Réseaux Sociaux-->
-            <div id="social" class="box-social-link">
-                <a href='https://github.com/tsudos'target='_blank'><i class="fab fa-github fa-1x "></i></a>
-                <a href='https://www.linkedin.com/in/stephane-dufour-6102b4b3/' target='_blank'><i class="fab fa-linkedin fa-1x"></i></a>
-                <a href='https://www.instagram.com/tsudos.des.iles/'target='_blank'><i class="fab fa-instagram fa-1x"></i></a>
-                <a href='https://www.facebook.com/Tsudos.des.iles'target='_blank'><i class="fab fa-facebook fa-1x "></i></a>
-            </div>
-            <!--Fin Réseaux Sociaux-->
-
-            <hr>
+    <hr>
 
             <!--Stack tech-->
             <div id="stack">
@@ -100,7 +172,7 @@
             </div>
             <!--Fin Stack tech-->
 
-            <hr>
+    <hr>
 
             <!--mailto & cv-->
             <div id="mailto">
@@ -110,78 +182,306 @@
                 <a class="cv" href="doc/20200325_CV_STEPH_Poste.pdf" target = "_blank"><i class="fas fa-file-download fa-1x"></i><a/>
             </div>
             <!--Fin Mailto & cv-->
-            
-            
+
+            <hr>
+
+<!--UTILITE ????????-->
             <!--Nav principale-->
-            <!--<div class="navigation">
+            <div class="navigation hidden">
                 <ul>
-                    <li><a href="#" class="menu_nav">Prez</a></li>
+                    <li><a href="#" class="menu_nav">job</a></li>
                     <li><a href="#" class="menu_nav">Front-End</a></li>			
                     <li><a href="#" class="menu_nav">Back-End</a></li>
                     <li><a href="#" class="menu_nav">Realisations</a></li>
                     <li><a href="#" class="menu_nav">Projets</a></li>
                 </ul>	
-            </div>-->
+            </div>
             <!--Fin Nav principale--> 
+
+            <hr>
 
         <!--Fin barre title & prez -->
 
         <!--Contenu-->
-        <div class="content">
-            <!--job & stage-->
-            <div id="job">
-                <h3>Expériences Professionnel</h3>
-            </div>
-            <!--Fin job & stage-->
+            <div class="content">
+                <!--job & stage-->
+                <div id="job">
+                    <h3>Expériences Professionnel</h3>
+                    <div id="job1" class="window1">
+                        <img class="logo-small-job1" src="https://loremflickr.com/160/120?random=1">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail du Stage
+                            <span>
+                                <h4><strong>Monitoring de flux</strong></h4>
+                                <strong>Descriptif rapide du projet :</strong><br>
+                                Créer un script d’appel du slug d'un partner en base, puis grâce à un retour de requête http, Monitoring des Flux et suivi des Erreurs et faire le lien avec Grafana.<br>
+                                <strong>Réalisations :</strong> 
+                                    <ul>
+                                        <li>Récupération des infos en base à travers des requêtes GraphQL</li>
+                                        <li>Interrogation de flux XML (RSS, MRSS, Atom)</li>
+                                        <li>Ecriture de script suivant différents cas de figures</li>
+                                        <li>Prise en main du CMS interne, création de feed de Test</li>
+                                        <li>Refactoring constant</li>
+                                        <li>Ecriture de tests unitaires Suivi de Réunion Agile.</li>
+                                    </ul>
+                                <strong>Environnement Technique :</strong><br>
+                                Git et BitBucket, Visual Studio Code / PHP Storm, PHP 7.1 à 7.3 et Symfony 4.0, Slack, Google Docks, Grafana, GraphQL.<br>
+                            </span>
+                        </button>
+                    </div>
+                    <div id="job2" class="window2">
+                        <img class="logo-small-job2" src="https://loremflickr.com/160/120?random=2">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail du Stage
+                            <span>
+                                <h4><strong>Monitoring de flux</strong></h4>
+                                <strong>Descriptif rapide du projet :</strong><br>
+                                Créer un script d’appel du slug d'un partner en base, puis grâce à un retour de requête http, Monitoring des Flux et suivi des Erreurs et faire le lien avec Grafana.<br>
+                                <strong>Réalisations :</strong> 
+                                    <ul>
+                                        <li>Récupération des infos en base à travers des requêtes GraphQL</li>
+                                        <li>Interrogation de flux XML (RSS, MRSS, Atom)</li>
+                                        <li>Ecriture de script suivant différents cas de figures</li>
+                                        <li>Prise en main du CMS interne, création de feed de Test</li>
+                                        <li>Refactoring constant</li>
+                                        <li>Ecriture de tests unitaires Suivi de Réunion Agile.</li>
+                                    </ul>
+                                <strong>Environnement Technique :</strong><br>
+                                Git et BitBucket, Visual Studio Code / PHP Storm, PHP 7.1 à 7.3 et Symfony 4.0, Slack, Google Docks, Grafana, GraphQL.<br>
+                            </span>
+                        </button>
+                    </div>
+                    <div id="job3" class="window3">
+                        <img class="logo-small-job3" src="https://loremflickr.com/160/120?random=3">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail du Stage
+                            <span>
+                                <h4><strong>Monitoring de flux</strong></h4>
+                                <strong>Descriptif rapide du projet :</strong><br>
+                                Créer un script d’appel du slug d'un partner en base, puis grâce à un retour de requête http, Monitoring des Flux et suivi des Erreurs et faire le lien avec Grafana.<br>
+                                <strong>Réalisations :</strong> 
+                                    <ul>
+                                        <li>Récupération des infos en base à travers des requêtes GraphQL</li>
+                                        <li>Interrogation de flux XML (RSS, MRSS, Atom)</li>
+                                        <li>Ecriture de script suivant différents cas de figures</li>
+                                        <li>Prise en main du CMS interne, création de feed de Test</li>
+                                        <li>Refactoring constant</li>
+                                        <li>Ecriture de tests unitaires Suivi de Réunion Agile.</li>
+                                    </ul>
+                                <strong>Environnement Technique :</strong><br>
+                                Git et BitBucket, Visual Studio Code / PHP Storm, PHP 7.1 à 7.3 et Symfony 4.0, Slack, Google Docks, Grafana, GraphQL.<br>
+                            </span>
+                        </button>
+                    </div>
 
-            <hr>
+                    <div id="job4" class="window4 hidden">
+                        <img class="logo-small-job4" src="https://loremflickr.com/160/120?random=4">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail du Stage
+                            <span>
+                                <h4><strong>Monitoring de flux</strong></h4>
+                                <strong>Descriptif rapide du projet :</strong><br>
+                                Créer un script d’appel du slug d'un partner en base, puis grâce à un retour de requête http, Monitoring des Flux et suivi des Erreurs et faire le lien avec Grafana.<br>
+                                <strong>Réalisations :</strong> 
+                                    <ul>
+                                        <li>Récupération des infos en base à travers des requêtes GraphQL</li>
+                                        <li>Interrogation de flux XML (RSS, MRSS, Atom)</li>
+                                        <li>Ecriture de script suivant différents cas de figures</li>
+                                        <li>Prise en main du CMS interne, création de feed de Test</li>
+                                        <li>Refactoring constant</li>
+                                        <li>Ecriture de tests unitaires Suivi de Réunion Agile.</li>
+                                    </ul>
+                                <strong>Environnement Technique :</strong><br>
+                                Git et BitBucket, Visual Studio Code / PHP Storm, PHP 7.1 à 7.3 et Symfony 4.0, Slack, Google Docks, Grafana, GraphQL.<br>
+                            </span>
+                        </button>
+                    </div>
 
-            <!--cursus & formation-->
-            <div id="formation">
-                <h3>formation</h3>
-            </div>
-            <!--Fin cursus & formation-->
+                    <div id="job5" class="window5 hidden">
+                        <img class="logo-small-job5" src="https://loremflickr.com/160/120?random=5">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail du Stage
+                            <span>attente</span>
+                        </button>
+                    </div>
 
-            <hr>
-
-            <!--diplome & certification-->
-            <div id="certification">
-                <h3>Certifications et Diplômes</h3>
-            </div>
-            <!--Fin diplome & certification-->
-
-            <hr>
-
-            <!--skill-->
-            <div id="skill">
-                <h3>Skills et SoftSkills</h3>
-                <div class="col-md-12">
-                    <img class="logo-small-medic" src="img/logo_medic.png">
-                    <h5 class="color-font">Site de santé & bien-être - Medic-Appareil.com</h5>
-                    <small class="color-font">Co-Manager | 2019</small>
-                    <button class="btn btn-primary btn-discover" type="button" data-toggle="modal" data-target="#medic">En détail</button>
                 </div>
-                <div class="col-md-12">
-                    <img class="logo-small-medic" src="img/logo_medic.png">
-                    <h5 class="color-font">Site de santé & bien-être - Medic-Appareil.com</h5>
-                    <small class="color-font">Co-Manager | 2019</small>
-                    <button class="btn btn-primary btn-discover" type="button" data-toggle="modal" data-target="#medic">En détail</button>
+                <!--Fin job & stage-->
+
+    <hr>
+
+                <!--cursus & formation-->
+                <div id="formation">
+                    <h3>formation</h3>
+                    <div id="formation1" class="window1">
+                        <img class="logo-small-formation1" src="https://loremflickr.com/160/120?random=1">
+                        <h5 class="color-font"><a href="https://www.instic.fr/bac-2-developpeur-logiciel/" target="_blank" class="title_formation">Développeur web</a> - INSTIC groupe CTI</h5>
+                        <small class="color-font">Lyon | 07/2019-01/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>
+                                <h4><strong>Bac + 2 / Titre professionnel niveau 5</strong></h4>
+                                <strong>Enseignement technique :</strong>
+                                <ul>
+                                    <li>Algorithmie</li>
+                                    <li>Sécurité informatique</li>
+                                </ul>
+                                <strong>Rappel des bases de développement informatique :</strong>
+                                <ul>
+                                    <li>Programmation orientée objet : Java, Java EE, C#/.net</li>
+                                    <li>Gestion de base de données : SQL/SQL server</li>
+                                    <li>Développement web : HTML/CSS, Javascript, Jquery, PHP/PHP MySQL</li>
+                                    <li>Méthode d’analyse et modélisation : Merise/UML</li>
+                                    <li>Frameworks : Angular, Symfony</li>
+                                </ul>
+                                <strong>Conduite de projets de développement :</strong>
+                                <ul>
+                                    <li>Management de projet (cycle en V, PERT, GANTT)</li>
+                                    <li>Assurance qualité d’un projet et gestion des risques</li>
+                                    <li>Méthode Agile</li>
+                                    <li>Test et recette</li>
+                                </ul>
+                                <strong>Management opérationnel</strong>
+                                <strong> Marketing de l’emploi</strong>
+                                <strong> Enseignement général :</strong>
+                                <ul>
+                                    <li>Anglais technique</li>
+                                    <li>Communication interpersonnelle</li>
+                                </ul>
+                                <strong>Stage de 2 mois (02 et 03/2020)</strong>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div id="formation2" class="window2">
+                        <img class="logo-small-formation2" src="https://loremflickr.com/160/120?random=2">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
+                    <div id="formation3" class="window3">
+                        <img class="logo-small-formation3" src="https://loremflickr.com/160/120?random=3">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
+
+                    <div id="formation4" class="window4 hidden">
+                        <img class="logo-small-formation4" src="https://loremflickr.com/160/120?random=4">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
+
+                    <div id="formation5" class="window5 hidden">
+                        <img class="logo-small-formation5" src="https://loremflickr.com/160/120?random=5">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <img class="logo-small-medic" src="img/logo_medic.png">
-                    <h5 class="color-font">Site de santé & bien-être - Medic-Appareil.com</h5>
-                    <small class="color-font">Co-Manager | 2019</small>
-                    <button class="btn btn-primary btn-discover" type="button" data-toggle="modal" data-target="#medic">En détail</button>
+                <!--Fin cursus & formation-->
+
+    <hr>
+
+                <!--diplome & certification-->
+                <div id="certification">
+                    <h3>Certifications et Diplômes</h3>
+                    <div id="certification1" class="window1">
+                        <img class="logo-small-certification1" src="https://loremflickr.com/160/120?random=5">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
+                    <div id="certification2" class="window2">
+                        <img class="logo-small-certification2" src="https://loremflickr.com/160/120?random=5">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
+                    <div id="certification3" class="window3 hidden">
+                        <img class="logo-small-certification3" src="https://loremflickr.com/160/120?random=5">
+                        <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                        <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                        <button class="btn bulle" type="button" >Détail de la formation
+                            <span>attente</span>
+                        </button>
+                    </div>
                 </div>
+                <!--Fin diplome & certification-->
+
+    <hr>
+
+                <!--skill-->
+                <div id="skill">
+                    <h3>Skills et SoftSkills</h3>
+                    <div id="skill">
+                        <h3>Certifications et Diplômes</h3>
+                        <div id="skill1" class="window1">
+                            <img class="logo-small-skill1" src="https://loremflickr.com/160/120?random=5">
+                            <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                            <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                            <button class="btn bulle" type="button" >Détail de la formation
+                                <span>attente</span>
+                            </button>
+                        </div>
+                        <div id="skill2" class="window2">
+                            <img class="logo-small-skill2" src="https://loremflickr.com/160/120?random=5">
+                            <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                            <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                            <button class="btn bulle" type="button" >Détail de la formation
+                                <span>attente</span>
+                            </button>
+                        </div>
+                        <div id="skill3" class="window3">
+                            <img class="logo-small-skill3" src="https://loremflickr.com/160/120?random=5">
+                            <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                            <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                            <button class="btn bulle" type="button" >Détail de la formation
+                                <span>attente</span>
+                            </button>
+                        </div>
+                        <div id="skill4" class="window4 hidden">
+                            <img class="logo-small-skill4" src="https://loremflickr.com/160/120?random=5">
+                            <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                            <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                            <button class="btn bulle" type="button" >Détail de la formation
+                                <span>attente</span>
+                            </button>
+                        </div>
+                        <div id="skill5" class="window5 hidden">
+                            <img class="logo-small-skill5" src="https://loremflickr.com/160/120?random=5">
+                            <h5 class="color-font">Developpeur PHP/Symfony - Euronews pôle R&D / CMS Batch</h5>
+                            <small class="color-font">Lyon - Confluence | 02/2020-03/2020</small>
+                            <button class="btn bulle" type="button" >Détail de la formation
+                                <span>attente</span>
+                            </button>
+                        </div>
+                </div>
+                <!--Fin skill & softSkill-->
             </div>
-            <!--Fin skill & softSkill-->
-        </div>
         <!--Fin Contenu-->
 
+<!--UTILITE ????????-->
         <!--Footer-->
-        <div class="footer">
-
-        </div>
+            <div class="footer">
+            </div>
         <!--Fin Footer-->
 
         </div>
